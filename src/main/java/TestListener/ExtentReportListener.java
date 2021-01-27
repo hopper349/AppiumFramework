@@ -48,7 +48,7 @@ public class ExtentReportListener extends TestBase implements ITestListener {
         Log.info("before service");
         //service = AppiumDriverLocalService.buildDefaultService();
         Log.info("after service");
-        service.start();
+        //service.start();
     }
 
     public void onFinish(ITestContext context) {
