@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.838 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 35.338 s <<< FAILURE! - in TestSuite
+Homepage.Auto1.validateHomePage  Time elapsed: 15.501 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-NQA0MPQ', ip: '192.168.31.208', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: D:\Maven Projects\AppiumFra..., appPackage: com.androidsample.generalstore, automationName: uiautomator2, databaseEnabled: false, desired: {app: D:\Maven Projects\AppiumFra..., automationName: uiautomator2, deviceName: e83fc4ef, platformName: android}, deviceApiLevel: 29, deviceManufacturer: vivo, deviceModel: vivo 1818, deviceName: e83fc4ef, deviceScreenDensity: 384, deviceScreenSize: 1080x2340, deviceUDID: e83fc4ef, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.4, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 67, takesScreenshot: true, viewportRect: {height: 2273, left: 0, top: 67, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 503f4804-d1c3-43ff-b866-a700ecb96ae0
+*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector()).scrollIntoView(text("India"));}
+	at Homepage.Auto1.validateHomePage(Auto1.java:39)
+
