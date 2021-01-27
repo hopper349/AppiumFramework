@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="24058" started-at="2021-01-26T18:00:31 IST" finished-at="2021-01-26T18:00:55 IST">
+    <groups>
+      <group name="smoke">
+        <method signature="Auto1.validateHomePage2()[pri:0, instance:Homepage.Auto1@5bb21b69]" name="validateHomePage2" class="Homepage.Auto1"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test name="D:/Maven Projects/AppiumFramework" duration-ms="24058" started-at="2021-01-26T18:00:31 IST" finished-at="2021-01-26T18:00:55 IST">
+      <class name="Homepage.Auto1">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Homepage.Auto1@5bb21b69]" name="setUp" is-config="true" duration-ms="12650" started-at="2021-01-26T18:00:33 IST" finished-at="2021-01-26T18:00:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validateHomePage2()[pri:0, instance:Homepage.Auto1@5bb21b69]" name="validateHomePage2" duration-ms="9356" started-at="2021-01-26T18:00:45 IST" finished-at="2021-01-26T18:00:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateHomePage2 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Homepage.Auto1@5bb21b69]" name="tearDown" is-config="true" duration-ms="157" started-at="2021-01-26T18:00:55 IST" finished-at="2021-01-26T18:00:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Homepage.Auto1 -->
+    </test> <!-- D:/Maven Projects/AppiumFramework -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

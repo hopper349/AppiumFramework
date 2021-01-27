@@ -5,9 +5,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import javafx.print.PageOrientation;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -26,6 +28,7 @@ public class TestBase {
     public static ExtentSparkReporter extentSparkReporter;
     public static ExtentTest extentTest;
     public static Properties properties;
+    public static AppiumDriverLocalService service;
     public static Logger Log;
 
     public TestBase(){
@@ -44,19 +47,13 @@ public class TestBase {
         }
     }
 
-    public AndroidDriver<AndroidElement> capabilities(String appName) throws IOException {
+    public AndroidDriver<AndroidElement> initialization(String appName) throws IOException {
 
-
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\global.properties");
-        Properties properties = new Properties();
-        properties.load(fis);
-
-        String appDir = System.getProperty("user.dir")+"\\Apps\\"+properties.getProperty(appName);
-
+        String appDir = System.getProperty("user.dir")+"\\Apps\\General-Store.apk";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.APP,appDir);
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,properties.getProperty("device"));
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"e83fc4ef");
 
         driver= new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

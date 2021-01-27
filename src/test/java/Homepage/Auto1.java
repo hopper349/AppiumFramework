@@ -10,31 +10,37 @@ import Pages.Homepage;
 import Pages.Productspage;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 
 public class Auto1 extends TestBase {
 
     AndroidDriver driver;
-    Homepage homepage;
     HomepageAction homepageAction;
-    Productspage productspage;
     ProductsPageAction productsPageAction;
 
-    @BeforeTest
+    public Auto1(){
+        super();
+    }
+
+    @BeforeMethod(groups = {"regression","smoke"})
     public void setUp() throws IOException {
-        this.driver = capabilities("appName");
-        homepage = new Homepage(driver);
-        productspage = new Productspage(driver);
+        this.driver = initialization("appName");
         homepageAction = new HomepageAction(driver);
     }
-
-    @Test
-    public void validateHomePage(){
-        //productsPageAction = homepageAction.enterHomepageDetails();
-        Assert.assertTrue(homepage.getMaleRadioBtn().isDisplayed());
+    @AfterMethod(groups = {"regression","smoke"})
+    public void tearDown(){
+        driver.closeApp();
     }
-
+    @Test(groups = {"regression"})
+    public void validateHomePage() throws IOException {
+        extentTest.info("Entering Homepage Details");
+        homepageAction.enterHomepageDetails();
+    }
+    @Test(groups = {"smoke"})
+    public void validateHomePage2(){
+        extentTest.info("Entering Homepage Details");
+        homepageAction.enterHomepageDetails2();
+    }
 }

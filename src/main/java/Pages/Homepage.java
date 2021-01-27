@@ -26,8 +26,11 @@ public class Homepage extends TestBase {
     @AndroidFindBy(xpath="//android.widget.RadioButton[@resource-id='com.androidsample.generalstore:id/radioMale']")
     private WebElement MaleRadioBtn;
 
-    @AndroidFindBy(xpath="//android.widget.Button[@text='Let's  Shop']")
+    @AndroidFindBy(xpath="//android.widget.Button[@class='android.widget.Button']")
     private WebElement LetsShopBtn;
+
+    @AndroidFindBy(xpath="//android.widget.TextView[@text='India']")
+    private WebElement country;
 
     public WebElement getCountryDropdown(){
         return CountryDropdown;
@@ -40,5 +43,9 @@ public class Homepage extends TestBase {
     }
     public WebElement getLetsShopBtn(){
         return LetsShopBtn;
+    }
+
+    public WebElement getCountry(String countryName){
+        return driver.findElementByXPath("//android.widget.TextView[@text='"+countryName+"']");
     }
 }

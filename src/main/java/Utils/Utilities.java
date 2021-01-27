@@ -1,9 +1,15 @@
 package Utils;
 
 import Base.TestBase;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -26,4 +32,13 @@ public class Utilities extends TestBase {
         FileUtils.copyFile(src,new File(screenshotPath));
         return screenshotPath;
     }
+
+    public static void selectByVisibleText(WebElement webElement, String visibleText){
+        Select select = new Select(webElement);
+        select.selectByVisibleText(visibleText);
+     }
+
+     public static void scrollToElementUsingText(String scrollText){
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+scrollText+"\"));");
+     }
 }
